@@ -10,14 +10,12 @@ const MainDashBoard = () => {
     return (
         <div>
             {
-                !loggedInUser.isAdmin &&
-                <CustomerDashBoard></CustomerDashBoard>
-            }
-
-            {
-
                 loggedInUser.isAdmin &&
                 <DashBoard></DashBoard>
+            }
+            {
+                !loggedInUser.isAdmin &&
+                <CustomerDashBoard></CustomerDashBoard>
             }
         </div>
     );

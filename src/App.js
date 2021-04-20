@@ -28,26 +28,13 @@ function App() {
             <Home></Home>
           </Route>
 
-          {/* <PrivateRoute path="/admin">
-            <DashBoard></DashBoard>
-          </PrivateRoute> */}
-
           <PrivateRoute path="/admin">
             <MainDashBoard></MainDashBoard>
           </PrivateRoute>
 
-
-          {/* <Route path="/admin">
-            <DashBoard></DashBoard>
-          </Route> */}
-
           <Route path="/login">
             <Login></Login>
           </Route>
-
-          {/* <PrivateRoute path="/service/:serviceId">
-            <h1>helsafh</h1>
-          </PrivateRoute> */}
 
           <PrivateRoute path="/customer">
             <CustomerDashBoard></CustomerDashBoard>

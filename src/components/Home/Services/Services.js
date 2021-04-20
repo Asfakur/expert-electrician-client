@@ -35,7 +35,7 @@ const Services = () => {
             }
             <div className="row container-fluid mt-4">
                 {
-                    services.map(service => <ServiceDetail orderService={orderService} service={service} key={service.name}></ServiceDetail>)
+                    services.map(service => <ServiceDetail orderService={orderService} service={service} key={service._id}></ServiceDetail>)
                 }
             </div>
         </section>

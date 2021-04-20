@@ -42,7 +42,7 @@ const IndividualOrdered = () => {
                 {
                     orders.map(order => {
                         return (
-                            <tbody key={order.price}>
+                            <tbody key={order._id}>
                                 <tr>
                                     <th scope="row">{count++}</th>
                                     <td>{order.serviceName}</td>
