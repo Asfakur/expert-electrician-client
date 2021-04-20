@@ -1,0 +1,15 @@
+/* img {
+	transition: all .50s;
+}
+
+img:hover {
+	transform: scale(1.1);
+} */
+
+.hover-container {
+	transition: all .50s;
+}
+
+.hover-container:hover {
+	transform: scale(1.1);
+}
