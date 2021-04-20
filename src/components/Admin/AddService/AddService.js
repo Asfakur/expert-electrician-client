@@ -20,7 +20,7 @@ const AddService = () => {
         // console.log(formData);
 
         // send to back end
-        const url = 'http://localhost:5000/addService';
+        const url = 'https://quiet-reef-16003.herokuapp.com/addService';
         fetch(url, {
             method: 'POST',
             headers: {

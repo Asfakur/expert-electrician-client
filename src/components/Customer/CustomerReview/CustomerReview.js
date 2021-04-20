@@ -16,7 +16,7 @@ const CustomerReview = () => {
         console.log(reviewDetails);
 
         // post request for save review to db
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://quiet-reef-16003.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

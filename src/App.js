@@ -12,6 +12,7 @@ import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './components/Admin/Admin/DashBoard';
 import CustomerDashBoard from './components/Customer/CustomerDashBoard/CustomerDashBoard';
+import MainDashBoard from './components/MainDashBoard/MainDashBoard';
 
 export const UserContext = createContext(); //must be export 
 
@@ -23,13 +24,18 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Home></Home>
           </Route>
 
-            <PrivateRoute path="/admin">
-              <DashBoard></DashBoard>
-            </PrivateRoute>
+          {/* <PrivateRoute path="/admin">
+            <DashBoard></DashBoard>
+          </PrivateRoute> */}
+
+          <PrivateRoute path="/admin">
+            <MainDashBoard></MainDashBoard>
+          </PrivateRoute>
+
 
           {/* <Route path="/admin">
             <DashBoard></DashBoard>
@@ -46,6 +52,10 @@ function App() {
           <PrivateRoute path="/customer">
             <CustomerDashBoard></CustomerDashBoard>
           </PrivateRoute>
+
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
 
         </Switch>
       </Router>

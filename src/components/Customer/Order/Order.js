@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { UserContext } from '../../../App';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
@@ -8,14 +8,14 @@ const Order = () => {
 
     const { serviceId } = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-
+    let history = useHistory();
     const [service, setService] = useState({});
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const [orderData, setOrderData] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${serviceId}`)
+        fetch(`https://quiet-reef-16003.herokuapp.com/service/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data));
     }, [serviceId])
@@ -46,7 +46,7 @@ const Order = () => {
         console.log(orderPaymentInfo);
 
         // post request for save order to db
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://quiet-reef-16003.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -56,6 +56,7 @@ const Order = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
+                    history.push("/customer/ordersByEmail");
                     alert('Your order placed successfully');
                 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import ServiceDetail from '../ServicesDetail/ServiceDetail';
 import './Services.css';
-
+import { Spinner } from 'react-bootstrap';
 
 const Services = () => {
 
@@ -11,7 +11,7 @@ const Services = () => {
 
     //load data from backend
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://quiet-reef-16003.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
@@ -27,6 +27,12 @@ const Services = () => {
                 <h1>Services We Offer</h1>
                 <hr className="wave-icon" />
             </div>
+            {
+                services.length ?
+                    '' : <div className='text-center p-4'>
+                        <Spinner animation='border' variant='warning' />
+                    </div>
+            }
             <div className="row container-fluid mt-4">
                 {
                     services.map(service => <ServiceDetail orderService={orderService} service={service} key={service.name}></ServiceDetail>)

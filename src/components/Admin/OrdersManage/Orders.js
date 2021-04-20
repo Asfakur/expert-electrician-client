@@ -5,7 +5,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://quiet-reef-16003.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])
@@ -18,7 +18,7 @@ const Orders = () => {
         }
 
         // post request for change status to db
-        fetch('http://localhost:5000/changeStatus', {
+        fetch('https://quiet-reef-16003.herokuapp.com/changeStatus', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

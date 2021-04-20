@@ -10,7 +10,7 @@ const ManageService = () => {
 
     //load data from backend
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://quiet-reef-16003.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [total])
@@ -18,7 +18,7 @@ const ManageService = () => {
     const handleDelete = (id) => {
 
         console.log(id);
-        fetch(`http://localhost:5000/deleteService/${id}`, {
+        fetch(`https://quiet-reef-16003.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json()) // or res.json()

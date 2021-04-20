@@ -9,7 +9,7 @@ const AddAdmin = () => {
         console.log(adminInfo);
 
         // post request for save new admin to db
-        fetch('http://localhost:5000/addNewAdmin', {
+        fetch('https://quiet-reef-16003.herokuapp.com/addNewAdmin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

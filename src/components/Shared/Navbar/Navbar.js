@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
 
@@ -15,11 +17,12 @@ const Navbar = () => {
                         <Link className="nav-link mr-5" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link mr-5" to="/login">Login</Link>
+                        <Link className="nav-link mr-5" to="/admin">Dashboard</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link mr-5" to="/admin">Admin</Link>
+                        <Link className="nav-link mr-5" to="/login">{loggedInUser.email ? loggedInUser.name : 'Login'}</Link>
                     </li>
+
                 </ul>
             </div>
         </nav>

@@ -13,7 +13,7 @@ const IndividualOrdered = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/ordersByEmail',
+        fetch('https://quiet-reef-16003.herokuapp.com/ordersByEmail',
             {
                 method: 'POST',
                 headers: {

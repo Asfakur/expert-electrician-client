@@ -7,7 +7,7 @@ import { faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
-        <footer className="py-5 bg-secondary ">
+        <footer className="py-5 bg-secondary mt-5">
             <div className="row text-white container-fluid">
                 <div className="col-md-6 d-flex justify-content-center p-3 my-3">
                     <a className="px-3" href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener"><FontAwesomeIcon icon={faFacebook} size='3x' color='white' /></a>

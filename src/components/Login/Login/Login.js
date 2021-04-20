@@ -4,6 +4,7 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../../App';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 
 const Login = () => {
@@ -27,7 +28,7 @@ const Login = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://quiet-reef-16003.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -71,6 +72,7 @@ const Login = () => {
     }
     return (
         <div>
+            <Navbar></Navbar>
             {
                 loggedInUser.email ?
                     <div className="container text-center">
