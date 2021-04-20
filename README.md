@@ -13,3 +13,8 @@ The "Expert-Electrician" app has to types of user. One is customer and the other
 Admin will add electric service what will provide by their people
 And the other side customer will apply for service by paying amount of money
 The customer also be able to review service
+## Important information
+When admin will logged in with his/her email then admin will manage his work but he will not be able to pay for any service because it will not be shown to him/her
+When customer will logged in he/she will not be able to see administrative work
+
+### Home page Bonus Section: Drop Your Opinions/Complain section
